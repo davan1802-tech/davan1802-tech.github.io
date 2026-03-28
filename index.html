@@ -1,190 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dang Anh Van — Senior Java Backend Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dang_Anh_Van_Java_Developer_CV</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
-  <!-- DOWNLOAD BUTTON (floating) -->
-  <a href="Dang_Anh_Van_CV.pdf" download class="download-btn" title="Download CV as PDF">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-      <polyline points="7 10 12 15 17 10"/>
-      <line x1="12" y1="15" x2="12" y2="3"/>
+<!-- ── Download Button ── -->
+<button class="download-btn" onclick="handleDownload()"
+        title="File will be saved as: Dang_Anh_Van_Java_Developer_CV.pdf">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
     </svg>
-    <span>Download CV</span>
-  </a>
+    Download PDF
+    <span class="btn-hint">→ Dang_Anh_Van_Java_Developer_CV.pdf</span>
+</button>
 
-  <div class="page">
+<script>
+    function handleDownload() {
+        const element = document.body;
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-eyebrow">SENIOR JAVA BACKEND DEVELOPER</div>
-      <h1 class="header-name">DANG ANH VAN</h1>
-      <div class="header-contact">
-        <span>Hanoi, Vietnam</span>
-        <span class="dot">·</span>
-        <span>(+84) 373-273-121</span>
-        <span class="dot">·</span>
-        <span>davan.1802@gmail.com</span>
-        <span class="dot">·</span>
-        <span>github.com/vanpersieyolo</span>
-      </div>
-      <div class="rule"></div>
-    </header>
+        html2pdf()
+            .set({
+                margin: 10,
+                filename: 'Dang_Anh_Van_Java_Developer_CV.pdf',
+                html2canvas: {scale: 2},
+                jsPDF: {unit: 'mm', format: 'a3', orientation: 'portrait'}
+            })
+            .from(element)
+            .save();
+    }
+</script>
 
-    <!-- SUMMARY -->
-    <section class="row">
-      <div class="label">SUMMARY</div>
-      <div class="body">
-        <p>Senior Java Backend Developer with over 5 years of experience designing and delivering scalable distributed systems across healthcare, pharmaceutical logistics, and fintech domains. Experienced in event-driven architecture, cloud deployment, and performance optimization. Proven ability to own complex modules end-to-end, lead feature development, and mentor junior engineers. Seeking a senior or technical lead role to drive architecture decisions and deliver robust backend systems at scale.</p>
-      </div>
-    </section>
+<div class="page">
 
-    <!-- SKILLS -->
-    <section class="row">
-      <div class="label">TECHNICAL EXPERTISE</div>
-      <div class="body">
-        <div class="expertise-list">
-          <div class="expertise-item">
-            <span class="expertise-title">Java Backend Development</span>
-            <span class="expertise-sep">—</span>
-            <span class="expertise-detail">Spring Boot, REST APIs,Monolithic, Microservices, CQRS, Serverless,... </span>
-          </div>
-          <div class="expertise-item">
-            <span class="expertise-title">Event-Driven &amp; Distributed Systems</span>
-            <span class="expertise-sep">-</span>
-            <span class="expertise-detail">Kafka, Redis,...</span>
-          </div>
-          <div class="expertise-item">
-            <span class="expertise-title">Database Management</span>
-            <span class="expertise-sep">—</span>
-            <span class="expertise-detail">Oracle, PostgreSQL, MongoDB, Redis, Elasticsearch,...</span>
-          </div>
-          <div class="expertise-item">
-            <span class="expertise-title">Cloud-Native Development</span>
-            <span class="expertise-sep">—</span>
-            <span class="expertise-detail">AWS, Docker, Jenkins,...</span>
-          </div>
-          <div class="expertise-item">
-            <span class="expertise-title">Secure API Development</span>
-            <span class="expertise-sep">—</span>
-            <span class="expertise-detail">OAuth2, JWT, IDP: Okta, Auth0, Keycloak, ...</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ══════════ SIDEBAR ══════════ -->
+    <aside class="sidebar">
 
-    <!-- EXPERIENCE -->
-    <section class="row">
-      <div class="label">EXPERIENCE</div>
-      <div class="body">
-
-        <!-- FPT Software -->
-        <div class="exp-block">
-          <div class="exp-duration">OCTOBER 2021 – PRESENT</div>
-          <div class="exp-title">Java Developer | FPT Software | Hanoi, Vietnam</div>
-
-          <div class="proj-label">DPDO – Warehouse Tracking System</div>
-          <div class="proj-desc">A logistics system used by a pharmaceutical company to track packages across warehouses.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java 17, Spring Boot, Kafka, PostgreSQL, MongoDB, Auth0, AWS, Next.js</div>
-          <ul>
-            <li>Developed backend services for warehouse inventory tracking</li>
-            <li>Designed REST APIs to process warehouse scanning events</li>
-            <li>Optimized database queries for faster item tracking</li>
-            <li>Led task breakdown and estimation for new features</li>
-          </ul>
-
-          <div class="proj-label">Parkway O2 – Healthcare Claim Processing Platform</div>
-          <div class="proj-desc">A healthcare insurance platform managing patient claims, claim verification, adjudication, and payment processing.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java 17, Spring Boot 3, Oracle, Angular, AWS</div>
-          <ul>
-            <li>Maintained backend services for insurance claim workflows</li>
-            <li>Optimized API performance for large claim datasets</li>
-            <li>Improved system stability and backend maintainability</li>
-          </ul>
-
-          <div class="proj-label">O1C - Digital Payment Gateway Platform</div>
-          <div class="proj-desc">A high-throughput payment gateway used by financial institutions to process online payments and transaction reconciliation.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java 17, Spring Boot, Kafka, PostgreSQL, Redis, Docker, AWS</div>
-          <ul>
-            <li>Designed APIs for payment authorization and settlement</li>
-            <li>Implemented event-driven transaction processing using Kafka</li>
-            <li>Built idempotent payment processing to ensure transaction consistency</li>
-            <li>Optimized database queries supporting high-volume transactions</li>
-          </ul>
+        <!-- Name & Title -->
+        <div>
+            <div class="sidebar-name">Dang Anh Van</div>
+            <div class="sidebar-title">Senior Java Backend Developer</div>
+            <div class="sidebar-divider" style="margin-top:3mm;"></div>
         </div>
 
-        <!-- CMC Global -->
-        <div class="exp-block">
-          <div class="exp-duration">JANUARY 2019 – SEPTEMBER 2021</div>
-          <div class="exp-title">Java Web Developer | CMC Global | Hanoi, Vietnam</div>
-
-          <div class="proj-label">ZAC – NFT Game Asset Management Platform</div>
-          <div class="proj-desc">Backend platform enabling players to manage game assets and accounts.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java, Spring Boot, NestJS, Kafka, PostgreSQL, MongoDB, Elasticsearch, Redis, AWS</div>
-          <ul>
-            <li>Developed backend APIs for asset management</li>
-            <li>Optimized API performance for high concurrent usage</li>
-            <li>Collaborated with clients to clarify requirements</li>
-          </ul>
-
-          <div class="proj-label">MRBS – Meeting Room Booking System</div>
-          <div class="proj-desc">Corporate system used internally to manage meeting rooms and devices.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java, Spring Boot, ReactJS, MySQL, WebSocket</div>
-          <ul>
-            <li>Designed database schema and backend architecture</li>
-            <li>Implemented APIs supporting meeting scheduling</li>
-            <li>Developed real-time updates using WebSocket</li>
-          </ul>
-
-          <div class="proj-label">Payment Middleware System</div>
-          <div class="proj-desc">Middleware service integrating mobile apps with external payment providers.</div>
-          <div class="proj-tech"><strong>Technologies:</strong> Java, Spring Boot, NestJS, Oracle, Redis</div>
-          <ul>
-            <li>Implemented payment request processing APIs</li>
-            <li>Diagnosed and resolved production transaction issues</li>
-            <li>Conducted peer code reviews</li>
-          </ul>
+        <!-- Contact -->
+        <div>
+            <div class="sidebar-section-title">Contact</div>
+            <ul class="contact-list">
+                <li>
+                    <span class="label">Location</span>
+                    Hanoi, Vietnam
+                </li>
+                <li>
+                    <span class="label">Phone</span>
+                    (+84) 373-273-121
+                </li>
+                <li>
+                    <span class="label">Email</span>
+                    davan.1802@gmail.com
+                </li>
+                <li>
+                    <span class="label">GitHub</span>
+                    github.com/vanpersieyolo
+                </li>
+            </ul>
         </div>
 
-      </div>
-    </section>
+        <!-- Technical Skills -->
+        <div>
+            <div class="sidebar-section-title">Technical Skills</div>
 
-    <!-- EDUCATION -->
-    <section class="row">
-      <div class="label">EDUCATION</div>
-      <div class="body">
-        <div class="edu-year">2017 – 2021</div>
-        <div class="edu-degree"><strong>Engineer's Degree</strong> — Automotive Technology</div>
-        <div class="edu-school">University of Transport and Communications, Hanoi</div>
-      </div>
-    </section>
+            <div class="skills-group">
+                <div class="skills-group-label">Backend</div>
+                <ul class="skill-tag-list">
+                    <li>Java 8 / 17 / 21</li>
+                    <li>Spring Boot</li>
+                    <li>REST APIs</li>
+                    <li>Microservices</li>
+                    <li>CQRS</li>
+                    <li>EDA</li>
+                    <li>Serverless</li>
+                    <li>...</li>
+                </ul>
+            </div>
 
-    <!-- CERTIFICATIONS -->
-    <section class="row row--last">
-      <div class="label">CERTIFICATIONS</div>
-      <div class="body">
-        <div class="skills-cols">
-          <ul class="skill-list">
-            <li>AWS Certified Solutions Architect – Associate (2024)</li>
-            <li>EnglishScore British Council – 459 (2024)</li>
-          </ul>
-          <ul class="skill-list">
-            <li>Mendix Rapid Developer (2024)</li>
-            <li>HSK Level 3 – Chinese Proficiency (2025)</li>
-          </ul>
+            <div class="skills-group">
+                <div class="skills-group-label">Messaging &amp; Cache</div>
+                <ul class="skill-tag-list">
+                    <li>Apache Kafka</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+
+            <div class="skills-group">
+                <div class="skills-group-label">Databases</div>
+                <ul class="skill-tag-list">
+                    <li>PostgreSQL</li>
+                    <li>Oracle</li>
+                    <li>MongoDB</li>
+                    <li>DynamoDB</li>
+                    <li>Elasticsearch</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+
+            <div class="skills-group">
+                <div class="skills-group-label">Cloud &amp; DevOps</div>
+                <ul class="skill-tag-list">
+                    <li>AWS</li>
+                    <li>Docker</li>
+                    <li>Jenkins</li>
+                    <li>CI/CD</li>
+                    <li>Github Action - Gitlab CI</li>
+                </ul>
+            </div>
+
+            <div class="skills-group">
+                <div class="skills-group-label">Security &amp; Auth</div>
+                <ul class="skill-tag-list">
+                    <li>OAuth2</li>
+                    <li>JWT</li>
+                    <li>Keycloak</li>
+                    <li>Auth0</li>
+                    <li>Okta</li>
+                </ul>
+            </div>
+
+            <div class="skills-group">
+                <div class="skills-group-label">Frontend (Supporting)</div>
+                <ul class="skill-tag-list">
+                    <li>Next.js</li>
+                    <li>ReactJS</li>
+                    <li>Angular</li>
+                    <li>NestJS</li>
+                    <li>WebSocket</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
 
-  </div>
+        <!-- Certifications -->
+        <div>
+            <div class="sidebar-section-title">Certifications</div>
+            <ul class="cert-list">
+                <li>
+                    AWS Certified Solutions Architect – Associate
+                    <span class="cert-year">2024</span>
+                </li>
+                <li>
+                    EnglishScore British Council – 459
+                    <span class="cert-year">2024</span>
+                </li>
+                <li>
+                    Mendix Rapid Developer
+                    <span class="cert-year">2024</span>
+                </li>
+                <li>
+                    HSK Level 3 – Chinese Proficiency
+                    <span class="cert-year">2025</span>
+                </li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <!-- ══════════ MAIN ══════════ -->
+    <main class="main">
+
+        <!-- SUMMARY -->
+        <section>
+            <div class="section-header">Professional Summary</div>
+            <p class="summary-text">
+                Results-driven Senior Java Backend Developer with <strong>5+ years of experience</strong>
+                architecting and delivering high-throughput distributed systems across
+                <strong>healthcare, pharmaceutical logistics, and fintech</strong> domains.
+                Deep expertise in event-driven architecture with Kafka, microservices design,
+                and cloud-native deployment on AWS. Proven track record of owning complex modules
+                end-to-end, driving API performance improvements, and mentoring junior engineers.
+                Currently targeting a <strong>Senior or Technical Lead role</strong> to spearhead
+                backend architecture decisions and scale robust, production-grade systems.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <div class="section-header">Professional Experience</div>
+
+            <!-- FPT Software -->
+            <div class="exp-block">
+                <div class="exp-header">
+                    <div class="exp-role">Java Backend Developer</div>
+                    <div class="exp-date">Oct 2021 – Present</div>
+                </div>
+                <div class="exp-company">FPT Software · Hanoi, Vietnam</div>
+
+                <!-- Project 1 -->
+                <div class="project-block">
+                    <div class="project-name">ZLP – Pharmaceutical Warehouse Tracking System</div>
+                    <div class="project-desc">A web application for a leading pharmaceutical healthcare provider in
+                        Asia, enabling warehouse staff to monitor item status, scan and link packs to cartons/pallets,
+                        track movement history, and relocate items across warehouse locations.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java 17 · Spring Boot · Kafka · PostgreSQL · MongoDB · Auth0 · AWS · Next.js
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Architected and delivered backend microservices for real-time package tracking across
+                            multi-warehouse pharmaceutical supply chains.
+                        </li>
+                        <li>Designed and documented REST APIs processing high-frequency warehouse scanning events,
+                            reducing downstream processing latency.
+                        </li>
+                        <li>Optimized complex database queries across PostgreSQL and MongoDB, significantly improving
+                            item lookup and inventory reporting speed.
+                        </li>
+                        <li>Led sprint planning, feature breakdown, and effort estimation for a cross-functional
+                            development team.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-block">
+                    <div class="project-name">Parkway O2 – Healthcare Insurance Claim Processing Platform</div>
+                    <div class="project-desc">Built for Asia's largest private healthcare group, O2R connects clinics
+                        with patients and manages end-to-end insurance workflows — from claim creation and verification
+                        through adjudication to payment settlement.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java 17 · Spring Boot 3 · Oracle · Angular · AWS
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Maintained and enhanced backend services governing the full patient claim lifecycle —
+                            submission, verification, adjudication, and payment.
+                        </li>
+                        <li>Optimized critical API endpoints handling large insurance claim datasets, improving
+                            throughput and response times under peak load.
+                        </li>
+                        <li>Improved system stability by refactoring legacy service layers and eliminating recurring
+                            production issues.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-block">
+                    <div class="project-name">Digital Payment Gateway Platform</div>
+                    <div class="project-desc">A high-throughput payment gateway serving financial institutions, handling
+                        online payment authorization, real-time transaction processing, and end-of-day reconciliation at
+                        scale.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java 17 · Spring Boot · Kafka · PostgreSQL · Redis · Docker · AWS
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Designed and implemented APIs for payment authorization, settlement, and transaction
+                            reconciliation serving financial institutions.
+                        </li>
+                        <li>Built an event-driven transaction processing pipeline using Apache Kafka, enabling reliable
+                            asynchronous settlement at scale.
+                        </li>
+                        <li>Engineered idempotent payment processing logic to guarantee exactly-once transaction
+                            consistency and prevent duplicate charges.
+                        </li>
+                        <li>Tuned database queries and Redis caching strategies to sustain performance under high-volume
+                            concurrent transaction loads.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CMC Global -->
+            <div class="exp-block">
+                <div class="exp-header">
+                    <div class="exp-role">Java Web Developer</div>
+                    <div class="exp-date">Jan 2019 – Sep 2021</div>
+                </div>
+                <div class="exp-company">CMC Global · Hanoi, Vietnam</div>
+
+                <!-- Project A -->
+                <div class="project-block">
+                    <div class="project-name">ZAC – NFT Game Asset Management Platform</div>
+                    <div class="project-desc">Developed for a Hong Kong-based blockchain gaming company, ZAC is a
+                        backend platform allowing players to manage in-game accounts, items, gift codes, and NFT assets
+                        across multiple game titles.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java · Spring Boot · NestJS · Kafka · PostgreSQL · MongoDB · Elasticsearch ·
+                        Redis · AWS
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed backend APIs enabling players to manage digital game assets and account data on a
+                            blockchain-integrated platform.
+                        </li>
+                        <li>Optimized API performance and Elasticsearch indexing strategies to handle high concurrency
+                            from a large global player base.
+                        </li>
+                        <li>Acted as a key liaison between the engineering team and international clients to clarify
+                            business requirements and deliver on time.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project B -->
+                <div class="project-block">
+                    <div class="project-name">MRBS – Enterprise Meeting Room Booking System</div>
+                    <div class="project-desc">An internal web application enabling company staff to reserve meeting
+                        rooms, manage office devices and assets, and view real-time room availability across multiple
+                        floors and locations.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java · Spring Boot · ReactJS · MySQL · WebSocket
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Designed normalized database schema and full backend architecture from scratch for a
+                            corporate resource scheduling platform.
+                        </li>
+                        <li>Implemented real-time room availability updates via WebSocket, eliminating double-booking
+                            conflicts across office locations.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project C -->
+                <div class="project-block">
+                    <div class="project-name">Payment Middleware Integration Service</div>
+                    <div class="project-desc">A middleware layer bridging mobile applications with multiple third-party
+                        payment providers, ensuring secure transaction routing, error handling, and consistent payment
+                        processing across channels.
+                    </div>
+                    <div class="project-tech">
+                        <span>Stack:</span> Java · Spring Boot · NestJS · Oracle · Redis
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Implemented secure payment request processing APIs integrating mobile applications with
+                            multiple external payment providers.
+                        </li>
+                        <li>Diagnosed and resolved critical production transaction failures, restoring service
+                            reliability and minimizing financial risk.
+                        </li>
+                        <li>Conducted systematic peer code reviews to enforce engineering standards and reduce defect
+                            rates.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <div class="section-header">Education</div>
+            <div class="edu-block">
+                <div>
+                    <div class="edu-degree">Engineer's Degree</div>
+                    <div class="edu-field">Automotive Technology</div>
+                    <div class="edu-school">University of Transport and Communications, Hanoi</div>
+                </div>
+                <div class="edu-date">2019 – 2022</div>
+            </div>
+        </section>
+
+    </main>
+</div>
 
 </body>
 </html>
