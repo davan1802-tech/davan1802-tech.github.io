@@ -25,10 +25,17 @@
 
         html2pdf()
             .set({
-                margin: 10,
+                margin: [5, 5, 5, 5],
                 filename: 'Dang_Anh_Van_Java_Developer_CV.pdf',
-                html2canvas: {scale: 2},
-                jsPDF: {unit: 'mm', format: 'a3', orientation: 'portrait'}
+                html2canvas: {
+                    scale: 1.5,
+                    useCORS: true
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a3',
+                    orientation: 'portrait'
+                }
             })
             .from(element)
             .save();
