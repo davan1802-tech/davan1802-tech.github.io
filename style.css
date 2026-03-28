@@ -434,3 +434,192 @@ body {
     size: A4;
     margin: 0;
 }
+
+/* ══════════ RESPONSIVE ══════════ */
+
+/* Tablet & smaller desktop (≤1024px) */
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 20px 0 40px;
+    }
+
+    .page {
+        transform: scale(1);
+        margin-bottom: 40px;
+        width: 95%;
+        max-width: 800px;
+    }
+
+    .download-btn {
+        top: 12px;
+        right: 12px;
+        font-size: 8pt;
+        padding: 8px 16px;
+    }
+
+    .download-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .btn-hint {
+        display: none;
+    }
+}
+
+/* Tablet portrait (≤768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px 0 20px;
+    }
+
+    .page {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 6mm 5mm;
+        gap: 4mm;
+    }
+
+    .sidebar-name {
+        font-size: 18pt;
+        text-align: center;
+    }
+
+    .sidebar-title {
+        font-size: 8pt;
+        text-align: center;
+    }
+
+    .sidebar-divider {
+        margin: 2mm auto;
+    }
+
+    .main {
+        padding: 6mm 5mm;
+        gap: 3.5mm;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 1mm;
+    }
+
+    .exp-date {
+        margin-left: 0;
+    }
+
+    .edu-block {
+        flex-direction: column;
+        gap: 1mm;
+    }
+
+    .edu-date {
+        margin-left: 0;
+    }
+
+    .download-btn {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        font-size: 0;
+        padding: 12px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+    }
+
+    .download-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Mobile (≤480px) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 10pt;
+        padding: 0;
+    }
+
+    .sidebar {
+        padding: 5mm 4mm;
+        gap: 3.5mm;
+    }
+
+    .sidebar-name {
+        font-size: 16pt;
+    }
+
+    .sidebar-title {
+        font-size: 7.5pt;
+    }
+
+    .sidebar-section-title {
+        font-size: 7.5pt;
+    }
+
+    .contact-list li {
+        font-size: 8.5pt;
+    }
+
+    .skill-tag-list {
+        gap: 1.2mm;
+    }
+
+    .skill-tag-list li {
+        font-size: 7.5pt;
+        padding: 0.6mm 2.2mm;
+    }
+
+    .main {
+        padding: 5mm 4mm;
+        gap: 3mm;
+    }
+
+    .section-header {
+        font-size: 9.5pt;
+    }
+
+    .summary-text {
+        font-size: 9.5pt;
+    }
+
+    .exp-role {
+        font-size: 10pt;
+    }
+
+    .project-name {
+        font-size: 9pt;
+    }
+
+    .project-desc {
+        font-size: 8.5pt;
+    }
+
+    .bullet-list li {
+        font-size: 9pt;
+    }
+
+    .download-btn {
+        bottom: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+    }
+
+    .download-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}

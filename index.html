@@ -21,6 +21,10 @@
 
 <script>
     function handleDownload() {
+        // Hide the download button before generating a PDF
+        const downloadBtn = document.querySelector('.download-btn');
+        downloadBtn.style.display = 'none';
+
         const element = document.body;
 
         html2pdf()
@@ -38,7 +42,11 @@
                 }
             })
             .from(element)
-            .save();
+            .save()
+            .then(() => {
+                // Show download button again after PDF is generated
+                downloadBtn.style.display = 'flex';
+            });
     }
 </script>
 
