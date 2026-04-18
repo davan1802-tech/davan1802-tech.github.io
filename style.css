@@ -362,6 +362,7 @@ body {
     top: 18px;
     right: 24px;
     z-index: 999;
+    text-decoration: none;
     background: #0f2040;
     color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -413,6 +414,8 @@ body {
         margin: 0;
         padding: 0;
         background: #fff none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .page {
@@ -422,7 +425,115 @@ body {
         box-shadow: none !important;
         border-radius: 0 !important;
         transform: scale(1) !important;
-        transform-origin: unset !important;
+        transform-origin: top center !important;
+        margin-bottom: 0 !important;
+    }
+
+    .sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Slightly larger type for PDF / print (screen keeps compact scale) */
+    body {
+        font-size: 10.5pt;
+        line-height: 1.52;
+    }
+
+    .sidebar-name {
+        font-size: 17pt;
+    }
+
+    .sidebar-title {
+        font-size: 8.5pt;
+    }
+
+    .sidebar-section-title {
+        font-size: 8pt;
+    }
+
+    .contact-list li {
+        font-size: 8.6pt;
+    }
+
+    .contact-list li span.label {
+        font-size: 7.25pt;
+    }
+
+    .skills-group-label {
+        font-size: 8pt;
+    }
+
+    .skill-tag-list li {
+        font-size: 7.85pt;
+    }
+
+    .cert-list li {
+        font-size: 8.35pt;
+    }
+
+    .cert-list li::before {
+        font-size: 7pt;
+    }
+
+    .cert-list li .cert-year {
+        font-size: 7.25pt;
+    }
+
+    .section-header {
+        font-size: 10pt;
+    }
+
+    .summary-text {
+        font-size: 10.25pt;
+    }
+
+    .exp-role {
+        font-size: 10.75pt;
+    }
+
+    .exp-date {
+        font-size: 8.35pt;
+    }
+
+    .exp-company {
+        font-size: 9pt;
+    }
+
+    .project-name {
+        font-size: 9.5pt;
+    }
+
+    .project-desc {
+        font-size: 8.75pt;
+    }
+
+    .project-tech {
+        font-size: 8pt;
+    }
+
+    .bullet-list li {
+        font-size: 9.5pt;
+    }
+
+    .bullet-list li::before {
+        font-size: 7.75pt;
+    }
+
+    .edu-degree {
+        font-size: 10pt;
+    }
+
+    .edu-field {
+        font-size: 9.5pt;
+    }
+
+    .edu-school {
+        font-size: 9pt;
+    }
+
+    .edu-date {
+        font-size: 8.35pt;
     }
 
     .download-btn {

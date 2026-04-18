@@ -5,50 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dang_Anh_Van_Java_Developer_CV</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
-<!-- ── Download Button ── -->
-<button class="download-btn" onclick="handleDownload()"
-        title="File will be saved as: Dang_Anh_Van_Java_Developer_CV.pdf">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<!-- ── Download: vector PDF built from HTML/CSS (see npm run pdf) ── -->
+<a class="download-btn" href="Dang_Anh_Van_Java_Developer_CV.pdf"
+   download="Dang_Anh_Van_Java_Developer_CV.pdf"
+   title="Vector PDF (real text). Regenerate locally with: npm run pdf">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
     </svg>
     Download PDF
-    <span class="btn-hint">→ Dang_Anh_Van_Java_Developer_CV.pdf</span>
-</button>
-
-<script>
-    function handleDownload() {
-        // Hide the download button before generating a PDF
-        const downloadBtn = document.querySelector('.download-btn');
-        downloadBtn.style.display = 'none';
-
-        const element = document.body;
-
-        html2pdf()
-            .set({
-                margin: [5, 5, 5, 5],
-                filename: 'Dang_Anh_Van_Java_Developer_CV.pdf',
-                html2canvas: {
-                    scale: 1.5,
-                    useCORS: true
-                },
-                jsPDF: {
-                    unit: 'mm',
-                    format: 'a3',
-                    orientation: 'portrait'
-                }
-            })
-            .from(element)
-            .save()
-            .then(() => {
-                // Show download button again after PDF is generated
-                downloadBtn.style.display = 'flex';
-            });
-    }
-</script>
+    <span class="btn-hint">Dang_Anh_Van_Java_Developer_CV.pdf</span>
+</a>
 
 <div class="page">
 

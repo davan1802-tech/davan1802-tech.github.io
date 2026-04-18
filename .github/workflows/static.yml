@@ -31,13 +31,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies & Chromium
+        run: |
+          npm ci
+          npx playwright install chromium --with-deps
+      - name: Build vector PDF from HTML/CSS
+        run: npm run pdf
+      - name: Stage site (static files + PDF)
+        run: |
+          mkdir -p _site
+          cp index.html style.css _site/
+          cp Dang_Anh_Van_Java_Developer_CV.pdf _site/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
