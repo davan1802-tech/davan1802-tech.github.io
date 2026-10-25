@@ -10,7 +10,7 @@ import { existsSync } from 'node:fs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const indexPath = join(root, 'index.html');
-const outPath = join(root, 'Dang_Anh_Van_Java_Developer_CV.pdf');
+const outPath = join(root, 'Dang_Anh_Van_Fullstack_Developer_CV.pdf');
 
 if (!existsSync(indexPath)) {
   console.error('generate-pdf: index.html not found at', indexPath);
@@ -19,7 +19,10 @@ if (!existsSync(indexPath)) {
 
 const fileUrl = pathToFileURL(indexPath).href;
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: true,
+  channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
+});
 try {
   const page = await browser.newPage();
   await page.emulateMedia({ media: 'print' });
